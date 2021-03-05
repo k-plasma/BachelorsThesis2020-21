@@ -1,0 +1,367 @@
+%
+% Angol nyelvű szakdolgozat minta az Eszterházy Károly Egyetem hallgatóinak.
+%
+
+\documentclass[
+% without options: one-sided printing, online version
+% twoside,       % two-sided printing
+]{thesis-ekf}
+\setcounter{secnumdepth}{5}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{natbib}
+\usepackage{lipsum}
+\usepackage{pgfplots}
+\usetikzlibrary{intersections}
+\usepackage{csquotes}
+\renewcommand{\mkbegdispquote}[2]{\itshape}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{subcaption}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=Python,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+\usepackage{graphicx}
+\begin{document}
+\institute{Eszterhazy Karoly University}
+\title{Machine Learning Model for Agricultural Data Applications}
+\author{Adeyemo Adedeji Charles\\Computer Science BSc}
+\supervisor{Bence Bogdandy\\Associate Professor}
+\city{Eger}
+\date{2020}
+\maketitle
+
+\tableofcontents
+
+\chapter*{Introduction}
+
+\todo{This is a Text that will appear in the margin}
+
+Intelligence is the ability to process information to inform future decisions. The field of Artificial Intelligence is the field which focuses on building algorithm models (in this case, Artificial Intelligence \cite{black2009books} Algorithms) that can do this as well - that is - process information to inform future decisions.
+
+Machine Learning itself is a subset of AI that focuses on teaching a machine how to do this without being explicitly programmed. 
+
+Deep Learning is a subset of Machine Learning which takes this idea even further. It allows us to automatically extract the useful pieces of information needed to inform these future predictions.
+
+Availability of localized and external data can help to practice *Precision Agriculture*
+
+
+ 
+ 
+ 
+ Like all other neural networks, deep-learning models don't take as input raw text:
+ they only work with numeric tensors. Vectorizing text is the process of transforming text
+ into numeric tensors. This can be done in multiple ways
+
+
+\chapter{Related Works}
+\section{Data Science}
+Data Science encompasses making awesome visualizations and models using data. As a field of Computer Science, it has created as much positive impact in our society. Impact could be in the form of insights, in the form of data products or in the form of product recommendations for a company. In order to achieve these things, we need tools like writing code, machine learning models or data visualizations.
+
+
+According to this article by Usama Fayyad \cite{fayyad1996data} data mining is referred to  as the overall process of discovering useful information from data. William S. Cleveland, \cite{cleveland2001data}   who at that time was a Distinguished Member of Technical Staff in the Statistics Research Department at Bell Labs, Murray Hill, defined data science as it is used today. He did that by combining computer science with data mining. He made statistics a lot more technical because he believed it would expand the possibilities of data mining and produce a powerful force for innovation. Now, we can take advantage of computational power for statistics.
+
+\subsection{Technical Advancement}
+Around this time, \textbf{web 2.0} emerged. Websites aren't simply digital pamphlets anymore, but a medium for shared experience among millions of users. These are websites like:
+\begin{itemize}
+	\item \textbf{MySpace:} 2003
+	\item \textbf{Facebook:} 2004
+	\item \textbf{YouTube:} 2005	
+\end{itemize}
+
+As users, we can now interact with these websites - post, comment, share - leaving our digital footprints on the Internet. That's a lot of data and soon enough, it became too much to handle using traditional technologies. This opened a world of possibilities in finding insights using data. So the rise in data sparked the rise of data science to support the needs of businesses to draw insights from their massive unstructured data sets. This abundance of data now makes it possible to train machines with a data-driven rather than a knowledge-driven approach. Deep learning is no longer an abstract academic concept in this thesis paper. It is a tangible useful class of machine learning model for agricultural data applications.
+
+\section{Machine Learning Workflow}
+From predicting economic growth to detecting cancers, Machine Learning has granted computer systems entirely new abilities. The first step to solving a Machine Learning task is to define the problem and assemble a data-set. The data-set has to be one with integrity. Choosing a measure of success and deciding on a validation protocol are the next logical steps. The most important step in building a Machine Learning model is the preparation of the data. It won't occur in a real-life situation that raw data is ready to be fed into a machine model. 
+
+Once the data is ready, the model can be built. At first, we build one that over-fits. Afterwards this model is regularized and its hyper-parameters tuned. 
+
+\begin{figure}[h!]
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{workflow.png}
+	\caption{Machine Learning Workflow.}
+	\label{fig:workflow}
+\end{figure}
+
+Figure \ref{fig:workflow} shows the workflow of a typical Machine Learning model.
+
+
+%////////////////////////////////////////////////////////////////////////////////////////////
+%////////////////////////////////////////////////////////////////////////////////////////////
+%////////////////////////////////////////////////////////////////////////////////////////////
+%////////////////////////////////////////////////////////////////////////////////////////////
+%////////////////////////////////////////////////////////////////////////////////////////////
+
+\chapter{Methods}
+\section{Data Science}
+Data Science is a subset of Computer Science and Mathematics. This subset introduces a new paradigm which creates algorithms for computers and robots. It combines statistics with Computer Science. Data Science also involves the use of machine learning algorithms for prediction.
+
+Machine Learning is a novel part of Data Science and it encompasses the ability of machines to learn from examples. These models are categorized as either \textbf{\textit{Supervised}} or \textbf{\textit{Unsupervised}} Machine Learning models. 
+
+In the field of Data Science, mathematics is very important. This is because principles within mathematics help in the detection of patterns and algorithm construction. In the application of such algorithms in data science, the comprehension of different conceptions of statistics and probability theory is crucial. Notions include Regression, Maximum Likelihood Estimation, distribution's comprehension (Binomial, Bernoulli, Gaussian (Normal)), and Bayes's Theorem.
+
+\subsection{Supervised Learning} %Dev Later
+Supervised learning is further categorized as  either \textbf{\textit{Regression}} or \textbf{\textit{Classification.}} The main difference between Regression and Classification is that the output variable in Regression is numerical while that for Classification is categorical. In other words, Regression predicts a quantity while  Classification predicts a label.
+
+
+\subsubsection{Machine Learning model - Regression}
+In this 1998 article, \cite{zeger1988regression} Scot Zeger posits the analysis of a regression model with a time series. Linear Regression is a basic offshoot of Regression. The predicted output of a Linear Regression model is continuous with a constant slope. The 2 main types of Linear Regression are simple and multivariate regression. 
+
+Simple linear regression can be explained with the slope-intercept form, where \textit{m} and \textit{b} are the variables the algorithm learns to produce the most accurate predictions. \textit{x} in this case represents the input data while \textit{y} the prediction.
+
+\begin{equation}
+	y = m x + b
+\end{equation}
+
+Multivariate regression is a method with more than one output variable that calculates a single regression model. If a multivariate regression model has more than one predictor variable, the system is a multivariate multiple regression.
+
+
+\subsubsection{Machine Learning model - Classification}
+
+In this 2006 paper by Kevin P. Murphy \cite{murphy2006naive} he defines a \textbf{classifier} as a function \textit{f} that maps input feature vectors to output classes. This classifier is derived from the \textbf{Bayes' Theorem}
+
+A classification is a tool used to assign groups to a data set in order to assist in detailed forecasts and analysis. You are introduced to an existing data-set with classification algorithms and are aware of the groups of individual instances; with this information, a predictive model can then be created to solve the following problem: For any future instance in the data-set to which a particular instance belongs. Max Entropy, K-Nearest Neighbor, and Naive Bayes are among the types of classification algorithms.
+
+
+
+\begin{equation}
+	\label{eq:bayes}
+	P(\theta | \textbf{D}) = P(\theta ) \frac{P(\textbf{D} |\theta)}{P(\textbf{D})},
+\end{equation}
+
+
+
+\subsection{Unsupervised Learning}
+%leave AS-_is
+
+
+
+\section{Machine Learning Workflow}
+One of the fundamental goals of Data Engineering is to develop data pipelines. A Data pipeline means taking data from point A (in an operational system) and then moving it to point B (into something that can be analyzed by data scientists).
+The data set used for this thesis paper was gotten from the Food and Agriculture Organization of the United Nations. This organization is tasked with creating a zero-hunger World. Starting from 1945, this organization has amassed a wealth of data-set archives from its member countries all over the world. My focus is on Hungary thus, making my contribution to creating a zero-hunger Hungary.
+
+According to the official website,\cite{division_2000}
+\begin{displayquote}
+	"FAOSTAT provides free access to food and agriculture data for over 245 countries and territories and covers all FAO regional groupings from 1961 to the most recent year available."
+\end{displayquote} 
+
+To achieve my goals I focused on the \textbf{Value Of Agricultural Production} and in particular the \textbf{Gross Production Value.} This value was gotten by multiplying agricultural gross production by the output prices. In the data-sets used in this thesis paper, the gross production value is expressed in US dollars. 
+
+
+
+Different data sets are available separately. For the purpose of this thesis, I narrowed down on wheat. I adopted a consistent time-frame. 1965 to 2002. The approach to this was: Given a set of features that are consistent with a particular agricultural product, the aim is to predict the Gross Production Value.
+
+\section{Neural Networks}
+A neural network is a collection of algorithms that, through a mechanism that mimics the way the human brain works, aim to identify fundamental connections in a data set \cite{jain1999recurrent}.  Neural networks, in this context, apply to neuron frameworks, either biological or artificial in nature. Neural networks may respond to evolving inputs, so the network delivers the best possible outcome without the performance parameters having to be revamped. In the development of trading systems, the notion of neural networks, which has its origins in artificial intelligence, is rapidly gaining prominence.\citealp*{krose1993introduction}.
+
+
+The biological neuron relations are modeled as weights. An excitation relation is reflected by a positive weight, whereas negative values mean inhibitory connections. Each input is updated and summarized by a weight. A linear combination is related to this practice. Finally, the amplitude of the output is regulated by an activation function. A reasonable performance range, for example, is usually between 0 and 1, or it may be −1 and 1.
+
+\section{Recurring Neural Network}
+
+A recurrent Neural Network(RNN) is a type of Neural Network in which the previous phase output is fed to the current stage as an input. Both the inputs and outputs are independent of each other in conventional neural networks, but in situations such as where it is important to predict the next word of a sentence, the prior words are needed and so the past words need to be recalled. RNN thus came into being, which, with the aid of a Hidden Layer, fixed this problem. Hidden State, which recalls any details about a sequence, is the key and most significant aspect of RNN.\cite{jain1999recurrent}
+
+By giving all layers the same weights and preferences, RNN transforms the independent activation into dependent activation, thereby reducing the difficulty of increasing parameters and memorizing each previous output by giving each output to the next hidden layer as an input.
+Therefore, all three layers should be merged into a single recurring layer such that the weights and biases of all the hidden layers are the same.
+
+The formula for calculating the current state:
+
+\[Ht = f(ht-1, Xt)\]
+
+\textit{where} \textbf{H} is the current state, \textbf{ht-1} is the previous state and \textbf{Xt} is the inpunt state.
+
+\subsection{GRU}  % DOn't Touch
+\subsection{LSTM}
+What is LSTM: It's the \textbf{Long short Term Memory} This networks rely on a gated cell to track information throughout many time-steps. How do LSTM work?
+
+\begin{itemize}
+	\item Forget: The lSTM forget their irrelevant history.
+	
+	
+	\item Store: They perform computation to store relevant parts of new information.
+	
+	
+	\item Update: They use the above items 1 and 2 to update their internal state.
+	
+	
+	\item Output: Finally, they generate an output.
+\end{itemize}
+
+In summary, LSTMs help with uninterrupted gradient flow.
+
+\section{Deep Learning}
+\subsection{Machine Learning vs Deep Learning}
+
+
+%////////////////////////////////////////////////////////////////////////////////////////////
+%////////////////////////////////////////////////////////////////////////////////////////////
+%////////////////////////////////////////////////////////////////////////////////////////////
+%////////////////////////////////////////////////////////////////////////////////////////////
+%////////////////////////////////////////////////////////////////////////////////////////////
+%////////////////////////////////////////////////////////////////////////////////////////////
+%////////////////////////////////////////////////////////////////////////////////////////////
+%////////////////////////////////////////////////////////////////////////////////////////////
+%////////////////////////////////////////////////////////////////////////////////////////////
+%////////////////////////////////////////////////////////////////////////////////////////////
+
+\chapter{Implementation}
+\section{Data Science - Engineering}
+
+The process of collecting raw data from sources, transforming it so that it matches our system's requirements and loading it into a data-set is know as \textbf{ETL.} This \textit{acronym} represents \textit{Extract - Transform - Load.}
+
+\begin{figure}[h!]
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{etl.jpg}
+	\caption{Extract Transform Load.}
+	\label{fig:ETL}
+\end{figure}
+
+Figure \ref{fig:ETL} shows the ETL process.
+
+
+This raw data set contains lots of columns which are not necessary. The next step will be to clean the data by dropping these unnecessary columns. 
+
+
+\subsection{Data Extraction.}
+
+As mentioned in the previous chapter, the source of data for the purpose of this thesis was the Food and Agriculture Organization of the United Nations. To achieve my goals I focused on the \textbf{Value Of Agricultural Production} and in particular the \textbf{Gross Production Value.} This value was gotten by multiplying agricultural gross production by the output prices. In the data-sets used in this thesis paper, the gross production value is expressed in US dollars. 
+
+
+Different data sets are available separately. For the purpose of this thesis, I narrowed down on wheat. I adopted a consistent time-frame (\textbf{1965 to 2002}). The approach to this was: \textit{Given a set of features that are consistent with a particular agricultural product, the aim is to predict the Gross Production Value.}
+
+To make the downloaded data set globally available, I uploaded it to my GitHub repository.\cite{adeyemo_2020}
+
+\begin{lstlisting}[language=Python]
+	url_wheatArea = 'https://raw.githubusercontent.com/k-plasma/Machine-Learning-Models-for
+	-Agricultural-Data-Applications/master/wheatArea.csv'	
+	
+	url_wheatGrossProduction = 'https://raw.githubusercontent.com/k-plasma/Machine-Learning-Models-for
+	-Agricultural-Data-Applications/master/wheatGrossProductionValue.csv'	
+	
+	url_wheatProductionQuantity = 'https://raw.githubusercontent.com/k-plasma/Machine-Learning-Models-for
+	-Agricultural-Data-Applications/master/wheatProductionQuantity.csv'	
+	
+	url_wheatYield = 'https://raw.githubusercontent.com/k-plasma/Machine-Learning-Models-for
+	-Agricultural-Data-Applications/master/wheatYield.csv'
+\end{lstlisting}
+
+\begin{figure}[h!]
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Area_Head.png}
+	\caption{Raw Data Area.}
+	\label{fig:Areaa_Head1}
+\end{figure}
+
+Figure \ref{fig:Areaa_Head1} shows the top 5 rows of the Data Set.
+
+
+Each set of data set contained lots of columns which are repetitive and irrelevant to the task at hand. These columns include: \textit{"Domain Code","Domain",
+	"Area Code","Area","Element Code","Element","Item Code","Item",
+	"Year Code","Unit","Flag","Flag Description","Note"}
+
+\subsection{Data Cleaning} 
+The repetitive columns constitute noise which isn't required. I drop these to narrow down on the vital data necessary for my task. Two columns are left: \textit{"Year", "Value".} Since the word \textit{"Value"} appears in the different data-sets, it's renamed here as \textit{"Area(Hectares)"} to clearly indicate that this value refers to the measurement of the area.
+
+
+\begin{lstlisting}[language=Python]
+	df_wheatArea.drop(columns=["Domain Code","Domain",
+	"Area Code","Area","Element Code","Element","Item Code","Item",
+	"Year Code","Unit","Flag","Flag Description","Note"], axis=1, inplace=True)
+	
+	df_wheatArea.columns = ['Year', 'Area(Hectares)'] 
+	
+	df_wheatArea.head()
+\end{lstlisting}
+
+A similar transformation is performed on the other data-sets. The resulting individual data-sets are: 
+\begin{figure}
+	\centering
+	\begin{subfigure}{.25\textwidth}
+		\centering
+		\includegraphics[width=.4\linewidth]{areaHectares.png}
+		\caption{Area}
+		\label{fig:sub1}
+	\end{subfigure}%
+	\begin{subfigure}{.24\textwidth}
+		\centering
+		\includegraphics[width=.4\linewidth]{gpv.png}
+		\caption{G.P.V}
+		\label{fig:sub2}
+	\end{subfigure}
+	\begin{subfigure}{.25\textwidth}
+		\centering
+		\includegraphics[width=.4\linewidth]{yield.png}
+		\caption{Yield}
+		\label{fig:sub3}
+	\end{subfigure}
+	\begin{subfigure}{.24\textwidth}
+		\centering
+		\includegraphics[width=.4\linewidth]{quantityTonnes.png}
+		\caption{Quantity}
+		\label{fig:sub4}
+	\end{subfigure}
+
+	\caption{Individual Transformed Data-Sets}
+	\label{fig:heads}
+\end{figure}
+
+
+
+\section{Implementing Machine Learning Work Flow}
+
+
+
+
+
+\subsection{Assembling the Data Set}
+\section{How I implemented the Neural Networks}
+\section{Recurring Neural Network}
+\section{Deep Learning}
+
+\chapter{Results}
+\section{Neural Networks}
+In this section, I will describe the Progression from Normal Neural network to Recurring Neural Networks - RNN. In the end, I'll show that the GRU works well and I have solved what I set out to do. 
+it should be here
+\subsection{Subsection title}
+Neural Networks and more advanced technologies. Right now we use Pandas for everything and it's enough, except when it's not. The more advanced we go into tech, the more basic the Machine Learning tools.
+
+Some Machine Learning models are very dependent on used materials. SCI-KIT uses the most basic of Neural networks. What you'll notice from GPV-Take 1 is that you can't create modern systems with SCI-KIT because it is the highest level of abstraction.
+
+Here, I'll need to show the results of the Google Colab Notebook - Gross Production Value 1 and the abysmal results I got using SCI-KIT
+
+We use SCI-KIT for scaling. It implements it very well. Train - Test - Split
+\cite{ponce1989engineering}
+
+
+\chapter{Discussion}
+\section{Section title}
+\subsection{Subsection title}
+
+
+\chapter{Summary}
+\section{Section title}
+\subsection{Subsection title}
+
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{reference}
+\end{document}
