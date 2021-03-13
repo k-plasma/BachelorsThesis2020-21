@@ -130,5 +130,11 @@ gr.Interface(predict,
         gr.inputs.Textbox(label="Yield")
     ],
     gr.outputs.Textbox(label="GPV")).launch()
-  
+
+
+
+
+
+
+
 
