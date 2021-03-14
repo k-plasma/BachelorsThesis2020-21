@@ -45,6 +45,8 @@
 
 
 
+
+
 \begin{document}
 	
 	
@@ -61,13 +63,16 @@
 
 
 \begin{abstract}
-	Prediction of economical growth is a complex task which is essential for planning sustainable economy.
-	Economy has a wide range of indicators that are monitored and recorded by governments and international organizations, such as, the Food and Agriculture Organization.
+	Prediction of economical growth is a complex task which is essential for planning sustainable economy.	
+	Economy has a wide range of indicators that are monitored and recorded by governments and international organizations, such as, the United Nations Food and Agriculture Organization.	
 	Agricultural data set of the Food and Agriculture Organization has records on production of crops and other agricultural products whose production strongly relates to the Gross Domestic Product of many countries.
+	
+	
 	Assuming that total crop production and agricultural economy growth are highly related, the production of crops and total value of income from agriculture can be learnt by sequential machine learning models.
 	Recurrent Neural Networks excel in learning time series and sequential data. 
-	This thesis presents experimental results on training various recurrent neural networks for modeling the changes of Agricultural and Gross Domestic Products.  
-	Our experimental results showed that the models could achieve \textbf{85}\% accuracy. 	
+	This study presents experimental results on training various recurrent neural networks for predicting the Gross Production Value of a particular agricultural product - wheat - given certain data point parameters. 
+	
+	This predictive model also plays a role in the Hungarian economic policy as in the future it will serve a basis for the calculation of the expected income for a specific crop.
 \end{abstract}
 
 \chapter*{Dedication}
@@ -81,17 +86,28 @@ To my mentor and supervisor, Bogdandy Bence without whom this dream would have r
 \todo{This is has to be concise. What is the purpose of my Thesis? What is the aim and the Objectives
 for researching this particular area}
 
-Intelligence is the ability to process information to inform future decisions. The field of Artificial Intelligence is the field which focuses on building algorithm models (in this case, Artificial Intelligence \cite{black2009books} Algorithms) that can do this as well - that is - process information to inform future decisions.
+Gross Domestic Product (GDP) is one of the most popular economical term and parameter for the indication of the well-being of a country. It is used by governments and international organization for critical decision making based on the size and performance of an economy. So, it is very important to compute and measure it accurately. Having a precise measurement of GDP according to the defined way is essentially impossible because it's a quantitative value which doesn't take all social indicators into account.We are thus able to give an estimated, acceptable value of the GDP.
 
-Machine Learning itself is a subset of AI that focuses on teaching a machine how to do this without being explicitly programmed. 
+This work is based on how the GDP is affected. There are a number of factors which affects the GDP positively or negatively. These factors could be domestic or global. The internal factors include political conditions, the state of peace, government public policies, business policies etc. Global factor could be international relations with other nations, relations with the neighboring nations, distances from international markets and access to global markets. 
 
-Deep Learning is a subset of Machine Learning which takes this idea even further. It allows us to automatically extract the useful pieces of information needed to inform these future predictions.
 
-Availability of localized and external data can help to practice *Precision Agriculture*
- 
- Like all other neural networks, deep-learning models don't take as input raw text:
- they only work with numeric tensors. Vectorizing text is the process of transforming text
- into numeric tensors. This can be done in multiple ways
+Exploring the history of economic and financial studies, it can be found that over 600 parameters can be identified \cite{richardson2020nowcasting} as predictors of GDP. After the innovation of this notion, its effectors have been analyzed in three distinct ways: qualitative analysis, statistical analysis and relational analysis. Qualitative analysis has often been the most popular in journalistic circles. While statistical analysis has been quite prevalent in economists circles. The use of machine learning is quite recent. It has made possible the exploration of several unanswered latent problems in economies.\cite{richardson2020nowcasting, milavcic2017application, kumar2019novel}
+
+
+This research is focused on the use of deep learning methods to study the impact of agriculture on the economy of Hungary. It focuses on:
+
+\begin{itemize}
+	\item Period: \textbf{1961 - 2016}
+	\item Crop: \textbf{Wheat}
+	\item Data points: \textbf{Area, Quantity, Yield}
+\end{itemize}
+
+\textbf{Bence - input}Or it can be rewritten as: This research studies the effect of wheat production in Hungary between 1961 - 2016 and its direct effect on the Gross Domestic Product.
+
+The rest of the document describes the role of neural networks in agricultural research. The methods of this proposed research are described in chapter II. After the comprehensive implementation in chapter III of the methods employed, the results of the works are discussed in chapters IV and V respectively.
+
+
+
 
 
 \chapter{Related Works}
