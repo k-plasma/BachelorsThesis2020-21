@@ -7,13 +7,22 @@
 \todo{I'll have to justify why I am selecting certain tools to answer my Research questions. That is the questions in the Diagram in Related Works}
 
 \todo{In addition, extract questions that go into a table. Justify why you have selected the sections and reference the Literature review. Maybe not relevant to my work.}
-Data Science is a subset of Computer Science and Mathematics. This subset introduces a new paradigm which creates algorithms for computers and robots. It combines statistics with Computer Science. Data Science also involves the use of machine learning algorithms for prediction.
 
-Machine Learning is a novel part of Data Science and it encompasses the ability of machines to learn from examples. These models are categorized as either \textbf{\textit{Supervised}} or \textbf{\textit{Unsupervised}} Machine Learning models. 
+Data Science is a subset of Computer Science and Mathematics. This subset introduces a new paradigm which creates algorithms for computers and robots. Data Science also involves the use of machine learning algorithms for prediction.
+
 
 In the field of Data Science, mathematics is very important. This is because principles within mathematics help in the detection of patterns and algorithm construction. In the application of such algorithms in data science, the comprehension of different conceptions of statistics and probability theory is crucial. Notions include Regression, Maximum Likelihood Estimation, distribution's comprehension (Binomial, Bernoulli, Gaussian (Normal)), and Bayes's Theorem.
 
-\subsection{Supervised Learning} %Dev Later
+The foundation of every current field of science is mathematics. Almost all data science methods have a strong mathematical underpinning, like machine learning.
+It comes as no surprise that to work as a top data scientist, you would completely need all the other beads of expertise-programming ability, some volume of business intelligence, and your unique analytical and curious mentality-about the data. But learning the machinery under the hood is still worth it, instead of just being the guy behind the wheel with no understanding of the car. A good awareness of the mathematical machinery behind the trendy algorithms would also give you an advantage over your colleagues.
+
+\section{Machine Learning}
+
+Machine Learning is a novel part of Data Science and it encompasses the ability of machines to learn from examples. These models are categorized as either \textbf{\textit{Supervised}} or \textbf{\textit{Unsupervised}} Machine Learning models. 
+
+\subsection{Supervised Learning}
+Supervised learning is essentially a formalization of the notion of learning from formerly supervised fields of learning. The learner (usually, a computer programme) is presented with two data sets, a training set and a test set during supervised learning. The idea is to set the learner's training set test to learn 'from a set of classified examples in the training set such that unlabeled examples can be defined with the greatest expected precision in the test set. That is, the learner's goal is to create a law, a programme, or a process that classifies new examples by evaluating examples that already have a class \cite{learned2014introduction}
+
 Supervised learning is further categorized as  either \textbf{\textit{Regression}} or \textbf{\textit{Classification.}} The main difference between Regression and Classification is that the output variable in Regression is numerical while that for Classification is categorical. In other words, Regression predicts a quantity while  Classification predicts a label.
 
 
@@ -27,6 +36,8 @@ Simple linear regression can be explained with the slope-intercept form, where \
 \end{equation}
 
 Multivariate regression is a method with more than one output variable that calculates a single regression model. If a multivariate regression model has more than one predictor variable, the system is a multivariate multiple regression.
+
+A natural extension of multiple linear regression is multivariate linear regression in that both methods aim to explain hypothetical linear correlations between some variables of outputs and inputs. Multiple regression is focused on the analysis of the degree to which a set of "i" input variables X= (X1,Xi) influences the behaviour of a single output variable Y. The multivariate regression has "o" output variables Y= (Y1,Yo), each of which can be affected by precisely the same range of X= (X1,Xi) inputs.\cite{izenman2013multivariate}
 
 
 \subsubsection{Machine Learning model - Classification}
@@ -45,7 +56,8 @@ A classification is a tool used to assign groups to a data set in order to assis
 
 
 \subsection{Unsupervised Learning}
-%leave AS-_is
+Unsupervised learning is a category of ML methods that work in the dataset of unlabeled data in order to explore frameworks or trends. New paradigms for unsupervised learning (as such-called self-supervised learning) have also been introduced to manipulate multiple labels that are readily accessible to learn general purpose characteristics in addition to or within visual data.\cite{dayan1999unsupervised}
+Unsupervised learning explores how models should learn in a way that illustrates the mathematical form of the overall input sequence set to describe individual input sequence. In comparison to supervised learning or reinforcement learning, each feedback is not correlated with specific goal outcomes or environmental assessments; instead, the unsupervised learning incorporates previous prejudices as to what elements of the input system can be reflected in the output.\cite{dayan1999unsupervised}
 
 
 
@@ -65,12 +77,19 @@ To achieve my goals I focused on the \textbf{Value Of Agricultural Production} a
 Different data sets are available separately. For the purpose of this thesis, I narrowed down on wheat. I adopted a consistent time-frame. 1965 to 2002. The approach to this was: Given a set of features that are consistent with a particular agricultural product, the aim is to predict the Gross Production Value.
 
 \section{Neural Networks}
-A neural network is a collection of algorithms that, through a mechanism that mimics the way the human brain works, aim to identify fundamental connections in a data set \cite{jain1999recurrent}.  Neural networks, in this context, apply to neuron frameworks, either biological or artificial in nature. Neural networks may respond to evolving inputs, so the network delivers the best possible outcome without the performance parameters having to be revamped. In the development of trading systems, the notion of neural networks, which has its origins in artificial intelligence, is rapidly gaining prominence.\citealp*{krose1993introduction}.
+A neural network is a collection of algorithms that, through a mechanism that mimics the way the human brain works, aim to identify fundamental connections in a data set \cite{jain1999recurrent}.  Neural networks, in this context, apply to neuron frameworks, either biological or artificial in nature. 
+
+\subsection{Biological Neural Network}
+Neural networks may respond to evolving inputs, so the network delivers the best possible outcome without the performance parameters having to be revamped. In the development of trading systems, the notion of neural networks, which has its origins in artificial intelligence, is rapidly gaining prominence.\citealp*{krose1993introduction}.
 
 
 The biological neuron relations are modeled as weights. An excitation relation is reflected by a positive weight, whereas negative values mean inhibitory connections. Each input is updated and summarized by a weight. A linear combination is related to this practice. Finally, the amplitude of the output is regulated by an activation function. A reasonable performance range, for example, is usually between 0 and 1, or it may be −1 and 1.
 
-\section{Recurring Neural Network}
+\subsection{Artificial Neural Network}
+
+To be developed.
+
+\section{Deep Neural Network}
 
 A recurrent Neural Network(RNN) is a type of Neural Network in which the previous phase output is fed to the current stage as an input. Both the inputs and outputs are independent of each other in conventional neural networks, but in situations such as where it is important to predict the next word of a sentence, the prior words are needed and so the past words need to be recalled. RNN thus came into being, which, with the aid of a Hidden Layer, fixed this problem. Hidden State, which recalls any details about a sequence, is the key and most significant aspect of RNN.\cite{jain1999recurrent}
 
