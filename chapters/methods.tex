@@ -107,9 +107,9 @@ The formula for calculating the current state:
 
 \[Ht = f(ht-1, Xt)\]
 
-\textit{where} \textbf{H} is the current state, \textbf{ht-1} is the previous state and \textbf{Xt} is the inpunt state.
+\textit{where} \textbf{H} is the current state, \textbf{ht-1} is the previous state and \textbf{Xt} is the input state.
 
-\subsection{GRU}  % DOn't Touch
+
 \subsection{LSTM}
 What is LSTM: It's the \textbf{Long short Term Memory} This networks rely on a gated cell to track information throughout many time-steps. How do LSTM work?
 
@@ -128,7 +128,26 @@ What is LSTM: It's the \textbf{Long short Term Memory} This networks rely on a g
 
 In summary, LSTMs help with uninterrupted gradient flow.
 
-Testing my commit
-
-\section{Deep Learning}
 \subsection{Machine Learning vs Deep Learning}
+
+Machine and Deep learning both offer ways to train models and classify data. That is, learning from and classifying previous occurrences. In a standard Machine learning approach, we'll manually select the features in order to train the machine learning model. Those features are then referenced when analyzing and classifying new data. This is the standard workflow to solving a Machine learning problem.
+
+\begin{figure}[h!]
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{fig/mlwkflow.png}
+	\caption{Machine Learning Workflow}
+	\label{fig:ML}
+\end{figure}
+
+
+
+
+Deep learning, which is a sub type of Machine learning, on the other hand skips the manual step of extracting features from the data set. Instead, the data is fed directly into the deep learning algorithm which then predicts the required outcome. 
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{fig/dpwkflow.png}
+	\caption{Deep Learning Workflow}	
+	\label{fig:DL}
+\end{figure}
+
+
+In deciding whether to choose Machine or Deep learning, the question to be answered is whether there are lots of labeled data and a high-performance GPU. If these 2 factors are missing, then the right approach would be Machine learning. The reason for this is that Deep learning is generally more complex and highly accurate. One of the downsides to Deep learning is this: because the model is a black box, if something isn't working correctly, it might be hard to debug. 
