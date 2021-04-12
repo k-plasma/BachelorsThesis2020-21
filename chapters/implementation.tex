@@ -21,14 +21,36 @@ As mentioned in the previous section, the source of data for the purpose of this
 
 \subsection{Data Extraction}
 
-This work is focused on estimation of Gross-Production Value (GPV), indicative of GDP, based on wheat crop information of Hungary. Finding the right data was been quite tedious. The data set was collected  from the United Nations Food and Agriculture Organization (UN-FAO) databases. The goal was to estimate GPV as the function of agri-land (Hectares) used for wheat, wheat quantity (Tons) produced and the crop yield (Hg/Ha – Hectogram/Hectares). All four variables could not be found in a single data-set. They were found in four different data-sets, but from the single source. The pertinent data-sets contained too much extra and irrelevant information. Using Pandas, the data-sets were cleaned, and desired variables were collected into one data-set a tabular frame using the year as the index. A glimpse of the data-frame is shown below:
+To extract data, apart from the source, which has already been mentioned as the FAO, the format has to be considered. Data can be provided in various formats like a csv file, xml file, json object just to mention a few. the extracted Data for my work was in a csv file format. 
+
+This work is focused on estimation of Gross-Production Value (GPV), indicative of GDP, based on wheat crop information of Hungary. The goal was to estimate GPV as the function of agri-land (Hectares) used for wheat, wheat quantity (Tons) produced and the crop yield (Hg/Ha Hectogram/Hectares). All four variables could not be found in a single data-set. They were found in four different data-sets, but from the single source.
+
 
 \begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.4\textwidth,height=\textheight,keepaspectratio]{fig/finaltable.png}
-	\caption{Concatenated Final Dataset}
-	\label{fig:CFD}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{fig/Area_Head.png}
+	\caption{Raw Data Area.}
+	\label{fig:Areaa_Head1}
 \end{figure}
+
+Figure \ref{fig:Areaa_Head1} shows the top 5 rows of the Wheat Area-harvested Data Set.
+
+\begin{figure}[h!]
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{fig/Quantity_Head.png}
+	\caption{Raw Data Quantity.}
+	\label{fig:Quantity_Head}
+\end{figure}
+
+Figure \ref{fig:Quantity_Head} shows the top 5 rows of the Quantity Data Set.
+
+
+
+\begin{figure}[h!]
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{fig/GPV_Head.png}
+	\caption{Raw Data Gross Production Value.}
+	\label{fig:GPV_Head}
+\end{figure}
+
+Figure \ref{fig:GPV_Head} shows the top 5 rows of the Gross Production Value Data Set.
 
 
 The correlation strength between the variables of the system is shown in the Figure below. Light and yellow colors indicate a strong correlation, while deeper colors show weak relationship. The weakest correlation can be observed between agricultural area and the yield, although it looks illogical. This is because of the unique definition of yield performance. So, it can be said that they are independent from one another. Similarly, weaker correlation can be observed amongst area, wheat quantity and GPV. It can be concluded that they will affect each other less, but they cannot be termed as independent parameters.  
@@ -49,9 +71,26 @@ Finally, the most valuable observation from Figure~\ref{fig:Corr} is that GPV is
 
 
 
-\subsection{Data Cleaning} 
+\subsection{Data Transformation} 
+
+This is the data-validation step. The guiding principle is: 
+
+\textquote{The garbage in, garbage out (GIGO) is the concept that flawed, or nonsense input data produces nonsense output or garbage}
+
+
+
+The pertinent data-sets contained too much extra and irrelevant information. Using Pandas, the data-sets were cleaned, and desired variables were collected into one data-set a tabular frame using the year as the index. A glimpse of the data-frame is shown below:
 
 Different data sets are available separately. For the purpose of this thesis, I narrowed down on wheat. I adopted a consistent time-frame (\textbf{1965 to 2002}). The approach to this was: \textit{Given a set of features that are consistent with a particular agricultural product, the aim is to predict the Gross Production Value.}
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.4\textwidth,height=\textheight,keepaspectratio]{fig/finaltable.png}
+	\caption{Concatenated Final Dataset}
+	\label{fig:CFD}
+\end{figure}
+
 
 To make the downloaded data set globally available, I uploaded it to my GitHub repository.\cite{adeyemo_2020}
 
@@ -69,13 +108,7 @@ To make the downloaded data set globally available, I uploaded it to my GitHub r
 	-Agricultural-Data-Applications/master/wheatYield.csv'
 \end{lstlisting}
 
-\begin{figure}[h!]
-	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{fig/Area_Head.png}
-	\caption{Raw Data Area.}
-	\label{fig:Areaa_Head1}
-\end{figure}
 
-Figure \ref{fig:Areaa_Head1} shows the top 5 rows of the Data Set.
 
 
 Each set of data set contained lots of columns which are repetitive and irrelevant to the task at hand. These columns include: \textit{"Domain Code","Domain",
@@ -130,14 +163,8 @@ A similar transformation is performed on the other data-sets. The resulting indi
 
 
 
-\section{Implementing Machine Learning Work Flow}
-
-
-
-
-
-\subsection{Assembling the Data Set}
-\section{How I implemented the Neural Networks}
+\section{Data Loading}
+\section{The Neural Networks}
 \section{Recurring Neural Network}
 \begin{figure}[h!]
 	\centering
