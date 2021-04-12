@@ -19,7 +19,11 @@ Figure \ref{fig:ETL} shows the ETL process.
 As mentioned in the previous section, the source of data for the purpose of this thesis was the Food and Agriculture Organization of the United Nations. To achieve my goals I focused on the \textbf{Value Of Agricultural Production} and in particular the \textbf{Gross Production Value.} This value was gotten by multiplying agricultural gross production by the output prices. In the data-sets used in this thesis paper, the gross production value is expressed in US dollars. This raw data set contains lots of columns which are not necessary. it's necessary to clean the data by dropping the unnecessary columns. 
 
 
+
+
 \subsection{Data Extraction}
+
+Different data sets are available separately. For the purpose of this thesis, I narrowed down on wheat. I adopted a consistent time-frame (\textbf{1965 to 2002}). The approach to this was: \textit{Given a set of features that are consistent with a particular agricultural product, the aim is to predict the Gross Production Value.}
 
 To extract data, apart from the source, which has already been mentioned as the FAO, the format has to be considered. Data can be provided in various formats like a csv file, xml file, json object just to mention a few. the extracted Data for my work was in a csv file format. 
 
@@ -75,13 +79,12 @@ Finally, the most valuable observation from Figure~\ref{fig:Corr} is that GPV is
 
 This is the data-validation step. The guiding principle is: 
 
-\textquote{The garbage in, garbage out (GIGO) is the concept that flawed, or nonsense input data produces nonsense output or garbage}
+\textquote{The garbage in, garbage out (GIGO) is the concept that flawed, or nonsense input data produces nonsense output or garbage.}
 
 
 
-The pertinent data-sets contained too much extra and irrelevant information. Using Pandas, the data-sets were cleaned, and desired variables were collected into one data-set a tabular frame using the year as the index. A glimpse of the data-frame is shown below:
+The pertinent data-sets contained too much extra and irrelevant information as well some null columns. Using Pandas, the data-sets were cleaned, irrelevant columns were dropped and desired variables were collected into one data-set a tabular frame using the year as the index. A glimpse of the data-frame is shown below:
 
-Different data sets are available separately. For the purpose of this thesis, I narrowed down on wheat. I adopted a consistent time-frame (\textbf{1965 to 2002}). The approach to this was: \textit{Given a set of features that are consistent with a particular agricultural product, the aim is to predict the Gross Production Value.}
 
 
 \begin{figure}[h!]
@@ -116,7 +119,7 @@ Each set of data set contained lots of columns which are repetitive and irreleva
 	"Year Code","Unit","Flag","Flag Description","Note"}
 
 
-The repetitive columns constitute noise which isn't required. I drop these to narrow down on the vital data necessary for my task. Two columns are left: \textit{"Year", "Value".} Since the word \textit{"Value"} appears in the different data-sets, it's renamed here as \textit{"Area(Hectares)"} to clearly indicate that this value refers to the measurement of the area.
+The repetitive columns constitute noise which isn't required. I dropped these to narrow down on the vital data necessary for my task. Two columns are left: \textit{"Year", "Value".} Since the word \textit{"Value"} appears in the different data-sets, it's renamed here as \textit{"Area(Hectares)"} to clearly indicate that this value refers to the measurement of the area.
 
 
 \begin{lstlisting}[language=Python]
@@ -129,7 +132,7 @@ The repetitive columns constitute noise which isn't required. I drop these to na
 	df_wheatArea.head()
 \end{lstlisting}
 
-A similar transformation is performed on the other data-sets. The resulting individual data-sets are: 
+A similar transformation is performed on the other data-sets. The resulting individual data-sets are displayed in Fig \ref{fig:heads} : 
 \begin{figure}
 	\centering
 	\begin{subfigure}{.25\textwidth}
@@ -164,7 +167,17 @@ A similar transformation is performed on the other data-sets. The resulting indi
 
 
 \section{Data Loading}
-\section{The Neural Networks}
+
+This is about loading the data to the database. Databases can be divided into either Relational or non-relational databases. Relational database store data in tables and rows. Non relation store data in JSON object. For the purpose of my work, the Python Pandas data-frame was used. This is a two-dimensional data structure where the data is aligned in rows and columns. The data can then be manipulated and vital information extracted.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.35\textwidth]{fig/panda.png}
+	\caption{Pandas DataFrame}
+	\label{fig:panda}
+\end{figure}
+
+
 \section{Recurring Neural Network}
 \begin{figure}[h!]
 	\centering
@@ -236,7 +249,3 @@ The models have been trained with extensive number of epochs. The training perfo
 	\end{subfigure}	
 	\caption{Training Performance between LSTM and GRU}
 \end{figure}
-
-
-\section{Deep Learning}
-
