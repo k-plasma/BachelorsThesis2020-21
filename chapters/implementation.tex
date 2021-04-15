@@ -1,8 +1,5 @@
 \section{Data Science - Engineering}
-\todo{Demonstrate the ability for analysis.}
-\todo{Link to Related works - Not repeating. Might look at the sections and link them}
 
-\todo{Section 1 is very interesting and further supports, or cast doubts or raises question marks about what is being said in the Related works.}
 The process of collecting raw data from sources, transforming it so that it matches our system's requirements and loading it into a data-set is know as \textbf{ETL.} This \textit{acronym} represents \textit{Extract - Transform - Load.}
 
 In this section, description regarding data pre-processing, model training, and model validations will be presented. Before the core analysis begins, it will be appropriate to talk about the dataset itself.
@@ -93,6 +90,7 @@ The pertinent data-sets contained too much extra and irrelevant information as w
 	\caption{Concatenated Final Dataset}
 	\label{fig:CFD}
 \end{figure}
+
 
 
 To make the downloaded data set globally available, I uploaded it to my GitHub repository.\cite{adeyemo_2020}
@@ -206,46 +204,3 @@ The reset door is another entryway. It is utilized to choose how much past data 
 
 To summarize, RNNs are useful for handling arrangement information for forecasts however they experience momentary memory. LSTM and GRU were made as a strategy to alleviate momentary memory utilizing components called gateways. Gates are simply neural organizations that control the progression of data coursing through the arrangement chain. LSTM and GRU are utilized in best-in-class profound learning applications like discourse acknowledgment, discourse amalgamation, common language understanding, and so on. 
 
-\subsubsection{Topology}
-
-In this work, LSTM and GRU variants of recurrent networks have been used as computational machines. The results of these algorithms are compared with a feed-forward network. For all the networks the number of input neurons are three, with 64 hidden neurons and a single output neuron.  
-
-In the feedforward network, 64 neurons are divided equally in 8 consecutive hidden layers. Although the network has become extremely complex, but the complexity remains essentially in vain. The training accuracy and prediction value were found to be poor. 
-
-The structure of LSTM requires that some neurons be assigned to the memory making region, known as cell, which serves the purpose of holding long-term desired information. The training machines can assign different number of neurons to cell memory and to the hidden layer depending upon the user's choice. The decision, taken by the user are dictated by various factors. Larger amount of memory can improve accuracy of prediction hugely, but speed of consecutive predictive operations could be impeded. So, the decision should be taken based on the optimum between speed and accuracy. 
-
-GRU does not require dedicated long-term memory, but it inherits the features of LSTM. It does update the neurons and lets them forget older data in similar fashion to that of LSTM. This algorithm can provide better speed and accuracy management.  
-
-A representative Feed Forward Network is shown in Figure ~\ref{fig:feedforward} showing the resulting graph.
-
-We can conclude that this method will not serve our purpose. 
-
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.35\textwidth]{fig/epoch_accuracy.png}
-	\caption{Feed Forward Network}
-	\label{fig:feedforward}
-\end{figure}
-
-
-
-\subsubsection{Model Training}
-
-The models have been trained with extensive number of epochs. The training performance and achieved accuracy are shown in Figure ~\ref{fig:feedforward} and Figure ~\ref{fig:trg} respectively. The x-axis indicates the epoch number, while the y-axis indicates the training loss. From Figure ~\ref{fig:feedforward}, it should be noticed that even with 100 epochs, the performance of feed-forward network could not be improved. So, further analysis of this network is left out. Figure ~\ref{fig:train} indicates the training performance of the proposed RNN’s networks. As the training continues epoch-by-epoch, networks keep on learning the underlying system better and better. So, LSTM indicates some fluctuations, but they can be ignored in comparison to feedforward network. It can clearly be seen that accuracy of LSTM and GRU has surpassed that of feed-forward network. This might have occurred due to foundations of LSTM and GRU on recurrent networks. 
-
-\begin{figure}[h!]
-	\centering
-	\begin{subfigure}{.5\textwidth}
-		\includegraphics[width=0.35\textwidth]{fig/trg.png}
-		\caption{LSTM vs GRU I}
-		\label{fig:trg}
-	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
-			\centering
-		\includegraphics[width=0.35\textwidth]{fig/train.png}
-		\caption{LSTM vs GRU II}
-		\label{fig:train}
-	\end{subfigure}	
-	\caption{Training Performance between LSTM and GRU}
-\end{figure}
